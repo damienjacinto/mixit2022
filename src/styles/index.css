@@ -1,0 +1,81 @@
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 5em;
+}
+
+.header {
+  height: 10%;
+}
+
+.content {
+  flex-grow: 1;
+  height: 90%;
+}
+
+/*
+.splitpanes__pane {
+  box-shadow: 0 0 3px rgba(0, 0, 0, .2) inset;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+/*
+
+/*
+.splitpanes__splitter {
+  height: 1px;
+} */
+
+.editor {
+  width:100%;
+  height:100%;
+}
+
+.CodeMirror {
+  border: 1px solid #eee;
+  height: auto;
+}
+
+.titleEditor {
+  font-size: large;
+  color: black;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.lightDarkMode {
+  background-color: rgba(255, 255, 255, 0.10);
+}
+
+.darkMode {
+  background-color: #282a35;
+  color: white;
+}
+
+.fullSize {
+  flex-grow: 1;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.titleEditor li{
+  padding-left: 10px;
+  width : 60px;
+  margin: 0;
+}
+
+.titleEditor ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
