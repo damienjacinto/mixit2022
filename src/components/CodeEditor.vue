@@ -4,24 +4,15 @@
 </template>
 
 <script>
+import HeaderPane from './HeaderPane.vue'
 import Codemirror from "codemirror-editor-vue3";
 import "codemirror/theme/dracula.css";
-import HeaderPane from './HeaderPane.vue'
+import "codemirror/mode/javascript/javascript.js";
+import "codemirror/mode/css/css.js";
+import "codemirror/mode/htmlmixed/htmlmixed.js";
 
 export default {
   name: "code-editor",
-  data: function() {
-    var theme = (this.darkmode ? 'dracula' : 'default')
-    return {
-      cmoptions: {
-        tabSize: 4,
-        mode: 'text/javascript',
-        theme: theme,
-        lineNumbers: true,
-        line: true,
-      }
-    }
-  },
   emits: ["updateCode"],
   methods: {
     emitValue(value) {
@@ -40,6 +31,25 @@ export default {
     title: {
       type: String,
       default: "title"
+    },
+    mode: {
+      type: String,
+      default: "text/javascript"
+    }
+  },
+  computed: {
+    cmoptions: function() {
+      var theme = (this.darkmode ? 'dracula' : 'default')
+      return {
+        tabSize: 4,
+        mode: this.mode,
+        theme: theme,
+        lineNumbers: true,
+        line: true,
+        smartIndent: true,
+        indentUnit: 2,
+        styleActiveLine: true,
+      };
     }
   },
   components: {

@@ -11,13 +11,13 @@
       <pane size="50">
         <splitpanes :push-other-panes="false" :dbl-click-splitter="false">
           <pane>
-            <code-editor title="css" :darkmode="true" :code="payload.css" @updateCode="updateCss"/>
+            <code-editor title="css" mode="css" darkmode="true" :code="payload.css" @updateCode="updateCss"/>
           </pane>
           <pane>
-            <code-editor title="js" :code="payload.javascript" @updateCode="updateJavascript" />
+            <code-editor title="js" mode="javascript" :code="payload.javascript" @updateCode="updateJavascript" />
           </pane>
           <pane>
-            <code-editor title="html" :code="payload.html" @updateCode="updateHtml" />
+            <code-editor title="html" mode="htmlmixed" :code="payload.html" @updateCode="updateHtml" />
           </pane>
         </splitpanes>
       </pane>
