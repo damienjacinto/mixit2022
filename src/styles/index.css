@@ -13,6 +13,8 @@ body {
 
 .header {
   height: 10%;
+  font-size: small;
+  color: black;
 }
 
 .content {

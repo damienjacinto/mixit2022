@@ -1,24 +1,21 @@
 <template>
-  <div class="titleEditor" v-bind:class="{ lightDarkMode: darkmode }">
-    <ul>
-      <li v-bind:class="{ darkMode: darkmode }">{{ title }}</li>
-    </ul>
+  <div class="header">
+    <input type="radio" name="darkmode" value="false" id="default" @input="$emit('update:darkmode', $event.target.value)" checked />
+    <label for="default">Default</label>
+    <input type="radio" name="darkmode" value="true" id="darkmode"  @input="$emit('update:darkmode', $event.target.value)" />
+    <label for="darkmode">Darkmode</label>
   </div>
 </template>
 
 <script>
-    //<p v-bind:class="{ darkMode: darkmode }"
 export default {
-  name: "code-editor",
+  name: "header-pane",
   props: {
     darkmode: {
-      type: Boolean,
-      default: false
-    },
-    title: {
       type: String,
-      default: "title"
+      default: 'false'
     }
   },
+  emits: ["update:darkmode"],
 }
 </script>

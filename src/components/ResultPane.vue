@@ -25,7 +25,7 @@ export default {
   computed: {
     codeComputed: function() {
       // eslint-disable-next-line
-      var javascript = `<script type="module" id="_script">${this.payload.javascript}<\/script>`
+      var javascript = `<script type="text/javascript" id="_script">${this.payload.javascript}<\/script>`
       var header = `<head>
         <style id="_style">${this.payload.css}</style>
         ${javascript}

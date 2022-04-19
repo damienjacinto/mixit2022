@@ -1,10 +1,10 @@
 <template>
-  <header-pane :title="title" :darkmode="darkmode"/>
-  <codemirror :value="code" :options="cmoptions" @input='emitValue' />
+  <header-editor :title="title" :darkmode="darkmode"/>
+  <codemirror :value="code" :options="cmoptions" @input='emitValue'/>
 </template>
 
 <script>
-import HeaderPane from './HeaderPane.vue'
+import HeaderEditor from './HeaderEditor.vue'
 import Codemirror from "codemirror-editor-vue3";
 import "codemirror/theme/dracula.css";
 import "codemirror/mode/javascript/javascript.js";
@@ -13,16 +13,16 @@ import "codemirror/mode/htmlmixed/htmlmixed.js";
 
 export default {
   name: "code-editor",
-  emits: ["updateCode"],
+  emits: ["update:code"],
   methods: {
     emitValue(value) {
-      this.$emit(`updateCode`, value);
+      this.$emit(`update:code`, value);
     },
   },
   props: {
     darkmode: {
-      type: Boolean,
-      default: false
+      type: String,
+      default: "false"
     },
     code: {
       type: String,
@@ -39,7 +39,7 @@ export default {
   },
   computed: {
     cmoptions: function() {
-      var theme = (this.darkmode ? 'dracula' : 'default')
+      var theme = (this.darkmode === 'true' ? 'dracula' : 'default')
       return {
         tabSize: 4,
         mode: this.mode,
@@ -53,7 +53,7 @@ export default {
     }
   },
   components: {
-    Codemirror, HeaderPane
+    Codemirror, HeaderEditor
   }
 };
 </script>
