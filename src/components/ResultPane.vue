@@ -1,7 +1,7 @@
 <template>
   <iframe
-    style="display:block; border:none; height:100vh; width:100%; background-color:white"
-    :srcdoc="imagesComputed"
+    class="resultPane"
+    :srcdoc="codeComputed"
     sandbox="allow-downloads allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
     frameBorder="0"
   ></iframe>
@@ -23,7 +23,7 @@ export default {
     }
   },
   computed: {
-    imagesComputed: function() {
+    codeComputed: function() {
       // eslint-disable-next-line
       var javascript = `<script type="module" id="_script">${this.payload.javascript}<\/script>`
       var header = `<head>

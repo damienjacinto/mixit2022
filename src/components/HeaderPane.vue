@@ -1,6 +1,6 @@
 <template>
   <div class="titleEditor" v-bind:class="{ lightDarkMode: darkmode }">
-    <ul id="onglets" class="clearfix">
+    <ul>
       <li v-bind:class="{ darkMode: darkmode }">{{ title }}</li>
     </ul>
   </div>

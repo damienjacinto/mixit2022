@@ -61,13 +61,6 @@ body {
   color: white;
 }
 
-.fullSize {
-  flex-grow: 1;
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-
 .titleEditor li{
   padding-left: 10px;
   width : 60px;
@@ -78,4 +71,12 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.resultPane {
+  display: block;
+  border: none;
+  height: 100vh;
+  width: 100%;
+  background-color:white;
 }
