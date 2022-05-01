@@ -1,6 +1,8 @@
 <template>
   <header-editor :title="title" :darkmode="darkmode"/>
-  <codemirror :value="code" :options="cmoptions" @input='emitValue'/>
+  <div style="height:calc(100% - 20px);">
+    <codemirror :value="code" :options="cmoptions" @input='emitValue'/>
+  </div>
 </template>
 
 <script>

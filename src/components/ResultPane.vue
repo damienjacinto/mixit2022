@@ -1,6 +1,7 @@
 <template>
   <iframe
     class="resultPane"
+    v-bind:class="{ lightDarkMode: darkmodebool }"
     :srcdoc="codeComputed"
     sandbox="allow-downloads allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
     frameBorder="0"
@@ -20,6 +21,10 @@ export default {
           html: "",
         }
       },
+    },
+    darkmode: {
+      type: String,
+      default: 'false'
     }
   },
   computed: {
@@ -32,6 +37,9 @@ export default {
         </head>`
 
       return `<html>${header}<body>${this.payload.html}</body></html>`;
+    },
+    darkmodebool: function() {
+      return (this.darkmode === 'true')
     }
   }
 };

@@ -1,5 +1,5 @@
 <template>
-  <div class="titleEditor" v-bind:class="{ lightDarkMode: darkmodebool }">
+  <div class="titleEditor" v-bind:class="{ lightDarkMode: darkmodebool }" >
     <ul>
       <li v-bind:class="{ darkMode: darkmodebool }">{{ title }}</li>
     </ul>

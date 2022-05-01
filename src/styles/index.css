@@ -55,12 +55,13 @@ body {
 }
 
 .lightDarkMode {
-  background-color: rgba(255, 255, 255, 0.10);
+  background-color: #444444 !important;
+  color: white !important;
 }
 
 .darkMode {
   background-color: #282a35;
-  color: white;
+  color: white !important;
 }
 
 .titleEditor li{
