@@ -36,7 +36,7 @@ import HeaderPane from '../components/HeaderPane.vue'
 const emptyPayload = { css: "", javascript: "", html: "" }
 
 export default {
-  name: 'CssChallenge',
+  name: 'CssChallenge',   
   data: function() {
     return {
       darkmode: 'false',

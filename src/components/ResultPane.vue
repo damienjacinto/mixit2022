@@ -1,5 +1,6 @@
 <template>
   <iframe
+    id="resultPane"
     class="resultPane"
     v-bind:class="{ lightDarkMode: darkmodebool }"
     :srcdoc="codeComputed"
@@ -9,6 +10,7 @@
 </template>
 
 <script>
+
 export default {
   name: "result-pane",
   props: {
