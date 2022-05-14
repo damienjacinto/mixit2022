@@ -15,11 +15,12 @@
             <code-editor title="css" mode="css" :darkmode="darkmode" v-model:code="payload.css" />
           </pane>
           <pane>
-            <result-pane v-model:payload="payload" :darkmode="darkmode"/>
+            <code-editor title="js" mode="javascript" :darkmode="darkmode" v-model:code="payload.javascript" />
           </pane>
         </splitpanes>
       </pane>
       <pane size="30">
+        <result-pane v-model:payload="payload" :darkmode="darkmode"/>
       </pane>
     </splitpanes>
   </div>
@@ -35,7 +36,7 @@ import HeaderPane from '../components/HeaderPane.vue'
 const emptyPayload = { css: "", javascript: "", html: "" }
 
 export default {
-  name: 'CssChallenge',
+  name: 'JsChallenge',
   data: function() {
     return {
       darkmode: 'false',

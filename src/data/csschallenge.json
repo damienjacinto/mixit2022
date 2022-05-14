@@ -1,0 +1,32 @@
+[
+    {
+        "name": "peaks",
+        "path": "favicon.svg",
+        "hint": [
+            {
+                "index": "1",
+                "value": "test1"
+            },
+            {
+                "index": "2",
+                "value": "test2"
+            }
+        ],
+        "timer": "20"
+    },
+    {
+        "name": "mxticonlogo",
+        "path": "mxticonlogo.svg",
+        "hint": [
+            {
+                "index": "1",
+                "value": "test1 mxticonlogo"
+            },
+            {
+                "index": "2",
+                "value": "test2 mxticonlogo"
+            }
+        ],
+        "timer": "20"
+    }
+]

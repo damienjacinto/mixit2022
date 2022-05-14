@@ -3,18 +3,53 @@ html, body, #app {
   margin: 0;
   display: flex;
   flex-direction: column;
+  font-family: Roboto;
 }
 
 body {
   font-family: Helvetica, Arial, sans-serif;
-  color: rgba(255, 255, 255, 0.5);
   font-size: 5em;
 }
 
 .header {
-  height: 10%;
   font-size: small;
   color: black;
+}
+
+.navHeader {
+  color: white;
+  display: flex;
+  height: 100px;
+  margin: 0px;
+  padding: 0px;
+  background-color: #E74E96;
+}
+
+.navPeaks {
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 1px solid  #E74E96;
+  color: #E74E96;
+  font-weight: bold;
+}
+
+.navPeaks a {
+  text-decoration: none;
+}
+
+.navMixit {
+  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.navImg {
+  height: 80%;
 }
 
 .content {
@@ -51,7 +86,7 @@ body {
   color: black;
   height: 20px;
   margin: 0;
-  padding: 0;
+  padding: 10px;
 }
 
 .lightDarkMode {
@@ -76,10 +111,29 @@ body {
   padding: 0;
 }
 
+.result {
+  display: flex;
+  background-color: white;
+}
+
 .resultPane {
   display: block;
   border: none;
-  height: 100vh;
-  width: 100%;
-  background-color:white;
+  height: 400px;
+  width: 400px;
+  background-color: white;
+}
+
+.resultImg {
+  height: 400px;
+  width: 400px;
+}
+
+img-comparison-slider {
+  --divider-width: 2px;
+  --divider-color: #000000;
+  --default-handle-opacity: 0.3;
+  --default-handle-color: #000000;
+  --default-handle-width: 80px;
+  --default-handle-shadow: rgba(0, 0, 0, 1);
 }

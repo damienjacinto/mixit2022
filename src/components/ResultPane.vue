@@ -1,16 +1,31 @@
 <template>
-  <iframe
-    id="resultPane"
-    class="resultPane"
-    v-bind:class="{ lightDarkMode: darkmodebool }"
-    :srcdoc="codeComputed"
-    sandbox="allow-downloads allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
-    frameBorder="0"
-  ></iframe>
+  <div class="result" v-bind:class="{ darkMode: darkmodebool , splitpanes__pane: true}" style="display: block">
+    <div class="titleEditor" >
+      <ul>
+        <li>result</li>
+      </ul>
+    </div>
+    <div style="background-color: white">
+      <ImgComparisonSlider hover="true" >
+        <!-- eslint-disable -->
+        <iframe
+          slot="first"
+          id="resultPane"
+          class="resultPane"
+          v-bind:class="{ lightDarkMode: darkmodebool }"
+          :srcdoc="codeComputed"
+          sandbox="allow-downloads allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+          frameBorder="0"
+        ></iframe>
+        <img slot="second" src="favicon.svg" class="resultImg">
+        <!-- eslint-enable -->
+      </ImgComparisonSlider>
+    </div>
+  </div>
 </template>
 
 <script>
-
+import { ImgComparisonSlider } from '@img-comparison-slider/vue';
 export default {
   name: "result-pane",
   props: {
@@ -28,6 +43,9 @@ export default {
       type: String,
       default: 'false'
     }
+  },
+  components: {
+    ImgComparisonSlider,
   },
   computed: {
     codeComputed: function() {

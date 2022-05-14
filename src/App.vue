@@ -1,7 +1,13 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link>
-    <router-link to="/css">Challenge CSS</router-link>
+  <div class="navHeader">
+      <div class="navPeaks">
+      <router-link to="/">
+        <img src="peakslogo.svg" class="navImg" alt="peaks" />
+      </router-link>
+      </div>
+    <div class="navMixit">
+      <img src="mxticonlogo.svg" class="navImg" alt="mixit" /> Challenges
+    </div>
   </div>
   <router-view/>
 </template>

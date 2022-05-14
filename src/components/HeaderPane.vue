@@ -4,8 +4,8 @@
     <label for="default">Default</label>
     <input type="radio" name="darkmode" value="true" id="darkmode"  @input="$emit('update:darkmode', $event.target.value)" />
     <label for="darkmode">Darkmode</label>
+    <button @click="tojpg">Result</button>
   </div>
-  <button @click="tojpg">Result</button>
 </template>
 
 <script>
