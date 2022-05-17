@@ -17,7 +17,7 @@
           sandbox="allow-downloads allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
           frameBorder="0"
         ></iframe>
-        <img slot="second" v-bind:src="'http://localhost:8080/' + challengeImg.path" class="resultImg">
+        <img slot="second" v-bind:src="'/' + challengeImg.path" class="resultImg">
         <!-- eslint-enable -->
       </ImgComparisonSlider>
     </div>
