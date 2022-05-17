@@ -6,7 +6,7 @@
       </router-link>
     </div>
     <div class="navMixit">
-      <img src="mxticonlogo.svg" class="navImg" alt="mixit" /> 24-25 Mai 2022
+      <img src="mixitlogo.svg" class="navImg" alt="mixit" /> 24-25 Mai 2022
     </div>
   </div>
   <router-view/>
