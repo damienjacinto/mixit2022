@@ -1,12 +1,12 @@
 <template>
   <div class="navHeader">
-      <div class="navPeaks">
+    <div class="navPeaks">
       <router-link to="/">
         <img src="peakslogo.svg" class="navImg" alt="peaks" />
       </router-link>
-      </div>
+    </div>
     <div class="navMixit">
-      <img src="mxticonlogo.svg" class="navImg" alt="mixit" /> Challenges
+      <img src="mxticonlogo.svg" class="navImg" alt="mixit" /> 24-25 Mai 2022
     </div>
   </div>
   <router-view/>

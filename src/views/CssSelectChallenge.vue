@@ -1,26 +1,8 @@
 <template>
-  <div style="
-    margin: 0 auto;
-    padding: 4rem 1.5rem 4rem;
-    width: 80%;
-    line-height: 1.4;
-    font-family: var(--font-family-base);
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--c-text);
-    direction: ltr;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    box-sizing: border-box;
-    padding-bottom: 1.5rem;
-    position: relative;">
+  <div class="carouselMain">
     <Carousel :itemsToShow="3.95" :wrapAround="true">
       <Slide v-for="challenge in cssChallenge" :key="challenge">
-        <div class="carousel__item">
-          <img v-bind:src="challenge.path" class="resultImg" />
-          <a href="/cssChallenge">{{ challenge.name }}</a>
-        </div>
+        <CardSelector :challenge="challenge" />
       </Slide>
       <template #addons>
         <Navigation />
@@ -34,6 +16,7 @@
 import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
 import CssChallengeData from "../data/csschallenge.json";
+import CardSelector from '../components/CardSelector.vue'
 
 export default {
   name: 'CssSelectChallenge',
@@ -41,7 +24,8 @@ export default {
     Carousel,
     Slide,
     Navigation,
-    Pagination
+    Pagination,
+    CardSelector
   },
   data: function() {
     return {
@@ -52,44 +36,55 @@ export default {
 </script>
 
 <style>
+:root {
+  --vc-clr-primary: #E74E96;
+  --vc-clr-secondary: #F195C0;
+}
+.carouselMain {
+  margin: 0 auto;
+  padding: 4rem 1.5rem 4rem;
+  width: 80%;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
 .carousel__slide > .carousel__item {
   transform: scale(1);
   opacity: 0.5;
   transition: 0.5s;
+  z-index: 1;
 }
 .carousel__slide--visible > .carousel__item {
-  opacity: 1;
   transform: rotateY(0);
 }
 .carousel__slide--next > .carousel__item {
-  transform: scale(0.9) translate(-20px);
+  transform: scale(0.8) translate(-200px);
 }
 .carousel__slide--prev > .carousel__item {
-  transform: scale(0.9) translate(20px);
+  transform: scale(0.8) translate(200px);
 }
 .carousel__slide--active > .carousel__item {
   transform: scale(1.1);
+  z-index: 2;
+  opacity: 1;
 }
 .carousel__item {
-	min-height: 200px;
-	width: 100%;
-	background-color: #642afb;
+  height: 400px;
+  width: 400px;
+	background-color: var(--vc-clr-primary);
+  border: 1px solid var(--vc-clr-primary);
+	border-radius: 10px;
 	color: white;
 	font-size: 20px;
-	border-radius: 8px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-
 .carousel__slide {
 	padding: 20px;
 }
-
 .carousel__prev,
 .carousel__next {
 	box-sizing: content-box;
 	border: 5px solid white;
-  background-color: #E74E96 !important;
 }
 </style>

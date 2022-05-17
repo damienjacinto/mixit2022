@@ -1,5 +1,6 @@
 [
     {
+        "id": "1",
         "name": "peaks",
         "path": "favicon.svg",
         "hint": [
@@ -12,11 +13,13 @@
                 "value": "test2"
             }
         ],
-        "timer": "20"
+        "timer": "20",
+        "rating": 4
     },
     {
-        "name": "mxticonlogo",
-        "path": "mxticonlogo.svg",
+        "id": "2",
+        "name": "mixitlogo",
+        "path": "mixitlogo.svg",
         "hint": [
             {
                 "index": "1",
@@ -27,6 +30,24 @@
                 "value": "test2 mxticonlogo"
             }
         ],
-        "timer": "20"
+        "timer": "20",
+        "rating": 3
+    },
+    {
+        "id": "3",
+        "name": "kubecon",
+        "path": "kubecon.svg",
+        "hint": [
+            {
+                "index": "1",
+                "value": "test1 kubecon"
+            },
+            {
+                "index": "2",
+                "value": "test2 kubecon"
+            }
+        ],
+        "timer": "20",
+        "rating": 2
     }
 ]
