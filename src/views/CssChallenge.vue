@@ -15,7 +15,7 @@
             <code-editor title="css" mode="css" :darkmode="darkmode" v-model:code="payload.css" />
           </pane>
           <pane>
-            <result-pane v-model:payload="payload" :darkmode="darkmode"/>
+            <result-pane v-model:payload="payload" :idChallenge="id" :darkmode="darkmode"/>
           </pane>
         </splitpanes>
       </pane>
@@ -41,6 +41,9 @@ export default {
       darkmode: 'false',
       payload: emptyPayload
     }
+  },
+  props: {
+    id: {}
   },
   components: {
     Splitpanes, Pane, CodeEditor, ResultPane, HeaderPane

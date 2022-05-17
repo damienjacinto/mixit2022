@@ -17,7 +17,7 @@
           sandbox="allow-downloads allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
           frameBorder="0"
         ></iframe>
-        <img slot="second" src="favicon.svg" class="resultImg">
+        <img slot="second" v-bind:src="'http://localhost:8080/' + challengeImg.path" class="resultImg">
         <!-- eslint-enable -->
       </ImgComparisonSlider>
     </div>
@@ -26,6 +26,7 @@
 
 <script>
 import { ImgComparisonSlider } from '@img-comparison-slider/vue';
+import CssChallengeData from "../data/csschallenge.json";
 export default {
   name: "result-pane",
   props: {
@@ -42,6 +43,10 @@ export default {
     darkmode: {
       type: String,
       default: 'false'
+    },
+    idChallenge: {
+      type: String,
+      default: "1"
     }
   },
   components: {
@@ -60,6 +65,12 @@ export default {
     },
     darkmodebool: function() {
       return (this.darkmode === 'true')
+    },
+    challengeImg: function() {
+      var idChallenge = this.idChallenge;
+      return CssChallengeData.filter(function(item) {
+        return item.id === parseInt(idChallenge)
+      })[0];
     }
   }
 };

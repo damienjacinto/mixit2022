@@ -37,8 +37,8 @@ export default {
     }
   },
   methods:{
-    handleSelect(){
-      this.$router.push({name:'CssChallenge'})
+    handleSelect(challengeId){
+      this.$router.push({name:'CssChallenge', params: { id: challengeId } })
     }
   }
 }

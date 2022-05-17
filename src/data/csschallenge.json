@@ -1,6 +1,6 @@
 [
     {
-        "id": "1",
+        "id": 1,
         "name": "peaks",
         "path": "favicon.svg",
         "hint": [
@@ -17,7 +17,7 @@
         "rating": 4
     },
     {
-        "id": "2",
+        "id": 2,
         "name": "mixitlogo",
         "path": "mixitlogo.svg",
         "hint": [
@@ -34,7 +34,7 @@
         "rating": 3
     },
     {
-        "id": "3",
+        "id": 3,
         "name": "kubecon",
         "path": "kubecon.svg",
         "hint": [

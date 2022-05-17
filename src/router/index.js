@@ -11,7 +11,7 @@ const routes = [
     path: '/cssSelect', name: 'CssSelectChallenge', component: CssSelectChallenge
   },
   {
-    path: '/cssChallenge', name: 'CssChallenge', component: CssChallenge
+    path: '/cssChallenge/:id', name: 'CssChallenge', component: CssChallenge, props: true
   },
   {
     path: '/JsChallenge', name: 'JsChallenge', component: JsChallenge
