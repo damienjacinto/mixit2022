@@ -9,9 +9,11 @@
   },
   "dependencies": {
     "@img-comparison-slider/vue": "^7.6.0",
+    "buffer": "^6.0.3",
     "codemirror-editor-vue3": "^2.0.6",
     "core-js": "^3.8.3",
     "html-to-image": "^1.9.0",
+    "pixelmatch": "^5.3.0",
     "splitpanes": "^3.1.0",
     "vue": "^3.2.13",
     "vue-agile": "^2.0.0",

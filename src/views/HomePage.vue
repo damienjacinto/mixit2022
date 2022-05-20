@@ -1,7 +1,7 @@
 <template>
-  <div style="padding-top: 40px;">
+  <div class="mainChallenge">
     <img src="challenge.png" class="logoChallenge" />
-    <div class="mainChallenge">
+    <div class="selectChallenge">
       <div class="boxChallenge">
         <router-link to="/cssSelect">
           <h3>CSS</h3>
@@ -33,7 +33,12 @@ export default {
   margin-right: auto;
   width: 50%;
 }
+
 .mainChallenge {
+  padding-top: 40px;
+}
+
+.selectChallenge {
   display: flex;
   width: 100%;
   height:100%;
