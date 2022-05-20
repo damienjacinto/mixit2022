@@ -8,7 +8,9 @@
       Votre score: {{ score }}
       <br/>
       Ecart détecté:
-      <canvas ref="canvas" class="canvasResult" width="400" height="400" />
+      <div class="canvasResultMain">
+        <canvas ref="canvas" class="canvasResult" width="400" height="400" />
+      </div>
       <button @click="$emit('close')">close</button>
     </div>
   </div>
@@ -21,7 +23,7 @@ export default {
     diffData: {
       type: Object,
       default: () => ({
-        data: [1, 2]
+        data: []
       })
     },
     score: {
@@ -36,28 +38,32 @@ export default {
   },
   emits: ["close"],
   mounted () {
-    console.log(this.diffData.data);
     if (this.diffData.data) {
-      console.log("ok");
       var ctx = this.$refs.canvas.getContext('2d');
       ctx.putImageData(this.diffData, 0, 0, 0, 0, 400, 400);
     }
   },
   updated() {
-    console.log(this.diffData.data);
     if (this.diffData.data) {
-      console.log("ok");
       var ctx = this.$refs.canvas.getContext('2d');
-      ctx.putImageData(this.diffData, 0, 0);
+      ctx.putImageData(this.diffData, 0, 0,  0, 0, 400, 400);
     }
   }
 }
 </script>
 
 <style>
+  .canvasResultMain {
+    width: 100%;
+    justify-content: center;
+  }
+
   .canvasResult {
     width: 400px;
     height: 400px;
+    border: 2px solid #000;
+    display: block;
+    margin: 0 auto;
   }
 
   .modal-finish {
