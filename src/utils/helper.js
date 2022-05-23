@@ -32,3 +32,16 @@ export function calculateScore(resultDiff, maxDiff) {
 
   return Math.floor(percentage/5) * 5;
 }
+
+export function checkCommand(command) {
+  if (command.toLowerCase().startsWith('kubectl ') || command.toLowerCase() == 'kubectl') {
+    return true;
+  }
+  if (command.toLowerCase().startsWith('kubens ') || command.toLowerCase() == 'kubens') {
+    return true;
+  }
+  if (command.toLowerCase().startsWith('clear') || command.toLowerCase() == 'clear') {
+    return true;
+  }
+  return false;
+}

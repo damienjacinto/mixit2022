@@ -1,8 +1,8 @@
 <template>
   <div class="carouselMain">
     <Carousel :itemsToShow="3.95" :wrapAround="true">
-      <Slide v-for="challenge in cssChallenge" :key="challenge">
-        <CardSelector :challenge="challenge" :name="type"/>
+      <Slide v-for="challenge in devopsChallenge" :key="challenge">
+        <CardSelector :challenge="challenge" :name="type" />
       </Slide>
       <template #addons>
         <Navigation />
@@ -15,11 +15,11 @@
 <script>
 import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
-import CssChallengeData from "../data/csschallenge.json";
+import DevopsChallengeData from "../data/devopschallenge.json";
 import CardSelector from '../components/CardSelector.vue'
 
 export default {
-  name: 'CssSelectChallenge',
+  name: 'DevopsSelectChallenge',
   components: {
     Carousel,
     Slide,
@@ -29,8 +29,8 @@ export default {
   },
   data: function() {
     return {
-      cssChallenge: CssChallengeData,
-      type: 'CssChallenge'
+      devopsChallenge: DevopsChallengeData,
+      type: 'DevopsChallenge'
     };
   },
 }

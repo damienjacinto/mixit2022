@@ -34,11 +34,15 @@ export default {
           rating: 0
         }
       }
+    },
+    name: {
+      type: String,
+      default: ""
     }
   },
   methods:{
     handleSelect(challengeId){
-      this.$router.push({name:'CssChallenge', params: { id: challengeId } })
+      this.$router.push({name: this.name, params: { id: challengeId } })
     }
   }
 }

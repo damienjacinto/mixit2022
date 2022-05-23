@@ -3,6 +3,7 @@
         "id": 1,
         "name": "peaks",
         "path": "favicon.svg",
+        "url": "http://localhost:8081/exo1",
         "hints": [
             {
                 "index": "1",
@@ -22,6 +23,7 @@
         "id": 2,
         "name": "mixitlogo",
         "path": "mixitlogo.svg",
+        "url": "http://localhost:8081/exo2",
         "hints": [
             {
                 "index": "1",
@@ -41,6 +43,7 @@
         "id": 3,
         "name": "kubecon",
         "path": "kubecon.svg",
+        "url": "http://localhost:8081/exo3",
         "hints": [
             {
                 "index": "1",

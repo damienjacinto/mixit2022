@@ -55,21 +55,8 @@ body {
 .content {
   flex-grow: 1;
   height: 90%;
+  margin-top: 5px;
 }
-
-/*
-.splitpanes__pane {
-  box-shadow: 0 0 3px rgba(0, 0, 0, .2) inset;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-/*
-
-/*
-.splitpanes__splitter {
-  height: 1px;
-} */
 
 .editor {
   width:100%;
@@ -83,12 +70,13 @@ body {
 }
 
 .titleEditor {
-  font-size: large;
-  color: black;
+  font-size: xx-large;
+  font-weight: bold;
+  color: #E74E96;
   height: 20px;
-  margin: 0;
-  padding: 10px;
-}
+  margin: 10px;
+  padding-bottom: 10px;
+  }
 
 .lightDarkMode {
   background-color: #444444 !important;
@@ -131,10 +119,24 @@ body {
 }
 
 img-comparison-slider {
+  outline-width: 0px;
   --divider-width: 2px;
   --divider-color: #000000;
   --default-handle-opacity: 0.3;
   --default-handle-color: #000000;
   --default-handle-width: 80px;
   --default-handle-shadow: rgba(0, 0, 0, 1);
+}
+
+.button {
+  font-size: 18px;
+  border: 2px solid #E74E96;
+  border-radius: 10px;
+  margin: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: block;
+  background-color: white;
 }

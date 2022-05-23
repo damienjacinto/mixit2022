@@ -8,10 +8,15 @@
       Votre score: {{ score }}
       <br/>
       Ecart détecté:
-      <div class="canvasResultMain">
-        <canvas ref="canvas" class="canvasResult" width="400" height="400" />
+      <div class="resultMain">
+        <div class="canvasResultMain">
+          <canvas ref="canvas" class="canvasResult" width="400" height="400" />
+        </div>
       </div>
-      <button @click="$emit('close')">close</button>
+      <div class="modalButton">
+        <button class="button" @click="$emit('retry')">Reprendre</button>
+        <button class="button" @click="$emit('close')">Terminer</button>
+      </div>
     </div>
   </div>
 </template>
@@ -36,7 +41,7 @@ export default {
     }
 
   },
-  emits: ["close"],
+  emits: ["retry", "close"],
   mounted () {
     if (this.diffData.data) {
       var ctx = this.$refs.canvas.getContext('2d');
@@ -61,9 +66,15 @@ export default {
   .canvasResult {
     width: 400px;
     height: 400px;
-    border: 2px solid #000;
     display: block;
     margin: 0 auto;
+  }
+
+  .resultMain {
+    width:100%;
+    border-bottom: 2px solid #E74E96;
+    border-top: 2px solid #E74E96;
+    padding: 10px 0px 10px 0px;
   }
 
   .modal-finish {
@@ -81,7 +92,7 @@ export default {
 
   .modal {
     background: #FFFFFF;
-    border-radius: 0.2em;
+    border-radius: 10px;
     max-width: 600px;
     min-width: 50%;
     min-height: 50%;
@@ -89,6 +100,12 @@ export default {
     overflow-x: auto;
     display: flex;
     flex-direction: column;
+  }
+
+  .modalButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .pyro > .before, .pyro > .after {

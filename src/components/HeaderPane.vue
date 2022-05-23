@@ -9,7 +9,8 @@
   </div>
   <ModalPane
       v-show="isModalVisible"
-      @close="closeModal"
+      @retry="closeModal"
+      @close="exitChallenge"
       v-model:diffData="diffData"
       v-model:score="score"
       v-model:shown="isModalVisible"
@@ -48,6 +49,10 @@ export default {
     closeModal() {
       this.isModalVisible = false;
     },
+    exitChallenge() {
+      this.$emit('reset');
+      this.$router.push({name:'Home'});
+    },
     tojpg() {
       htmlToImage.toCanvas(document.getElementById('resultPane').contentWindow.document.documentElement, { quality: 0.95, canvasWidth: 400, canvasHeight: 400, width: 400, height: 400})
         .then((canvas) => {
@@ -65,7 +70,7 @@ export default {
         });
     }
   },
-  emits: ["update:darkmode"],
+  emits: ["update:darkmode", "reset"],
   computed: {
     darkmodebool: function() {
       return (this.darkmode === 'true')

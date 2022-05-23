@@ -11,7 +11,9 @@
         <h3>CODE</h3>
       </div>
       <div class="boxChallenge">
-        <h3>DEVOPS</h3>
+        <router-link to="/devopsSelect">
+          <h3>DEVOPS</h3>
+        </router-link>
       </div>
     </div>
   </div>
@@ -31,7 +33,7 @@ export default {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 40%;
 }
 
 .mainChallenge {
@@ -46,10 +48,25 @@ export default {
   margin-top:50px;
 }
 
+.green {
+  background-color: ;
+}
+
+.blue {
+  background-color: ;
+}
+
+.red {
+  background-color: ;
+}
+
+
+
 .boxChallenge {
   width: 20%;
   height: 60%;
   margin: 20px;
+  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 </style>

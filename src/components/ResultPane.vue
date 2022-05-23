@@ -2,10 +2,10 @@
   <div class="result" v-bind:class="{ darkMode: darkmodebool , splitpanes__pane: true}" style="display: block">
     <div class="titleEditor" >
       <ul>
-        <li>result</li>
+        <li>{{ title }}</li>
       </ul>
     </div>
-    <div style="background-color: white">
+    <div class="resultContent">
       <ImgComparisonSlider hover="true" >
         <!-- eslint-disable -->
         <iframe
@@ -47,6 +47,10 @@ export default {
     idChallenge: {
       type: String,
       default: "1"
+    },
+    title: {
+      type: String,
+      default: ""
     }
   },
   components: {
@@ -75,3 +79,15 @@ export default {
   }
 };
 </script>
+
+<style>
+.resultContent {
+  background-color: white;
+  height: 100%;
+  border: 1px solid #eee;
+}
+.rendered {
+  border: 1px solid #E74E96;
+  margin: 20px;
+}
+</style>

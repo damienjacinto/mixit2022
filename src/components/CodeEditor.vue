@@ -1,7 +1,7 @@
 <template>
   <header-editor :title="title" :darkmode="darkmode"/>
   <div style="height:calc(100% - 20px);">
-    <codemirror :value="code" :options="cmoptions" @input='emitValue'/>
+    <codemirror v-model:value="codeEditor" :options="cmoptions" @update:value='emitValue'/>
   </div>
 </template>
 
@@ -20,6 +20,11 @@ export default {
     emitValue(value) {
       this.$emit(`update:code`, value);
     },
+  },
+  data: function() {
+    return {
+      codeEditor: this.code
+    }
   },
   props: {
     darkmode: {

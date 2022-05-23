@@ -5,18 +5,11 @@
       horizontal
       :push-other-panes="false"
       :dbl-click-splitter="false">
-      <pane size="50">
-        <splitpanes :push-other-panes="false" :dbl-click-splitter="false">
-          <pane>
-            <code-editor title="HTML" mode="htmlmixed" :darkmode="darkmode" v-model:code="payload.html" />
-          </pane>
-          <pane>
-            <code-editor title="CSS" mode="css" :darkmode="darkmode" v-model:code="payload.css" />
-          </pane>
-          <pane>
-            <result-pane :title="'Résultat'" v-model:payload="payload" :idChallenge="id" :darkmode="darkmode"/>
-          </pane>
-        </splitpanes>
+      <pane size="45">
+        <TerminalEditor />
+      </pane>
+      <pane size="5">
+        <ResultDevopsPane :idChallenge="id"/>
       </pane>
       <pane size="30">
         <div>
@@ -31,19 +24,19 @@
 <script>
 import { Splitpanes, Pane } from 'splitpanes'
 import 'splitpanes/dist/splitpanes.css'
-import CodeEditor from '../components/CodeEditor.vue'
-import ResultPane from '../components/ResultPane.vue'
 import HeaderPane from '../components/HeaderPane.vue'
 import TabsPane from '../components/TabsPane.vue'
-import CssChallengeData from "../data/csschallenge.json";
+import TerminalEditor from '../components/TerminalEditor.vue'
+import DevopsChallengeData from '../data/devopschallenge.json'
+import ResultDevopsPane from '../components/ResultDevopsPane.vue'
 
 //const emptyPayload = { css: "", javascript: "", html: "" }
 
 export default {
-  name: 'CssChallenge',
+  name: 'DevopsChallenge',
   data: function() {
     const challengeId = this.id;
-    var challenge = CssChallengeData.filter(function(item) {
+    var challenge = DevopsChallengeData.filter(function(item) {
         return item.id === parseInt(challengeId)
       })[0];
     return {
@@ -64,10 +57,10 @@ export default {
   components: {
     Splitpanes,
     Pane,
-    CodeEditor,
-    ResultPane,
     HeaderPane,
     TabsPane,
+    TerminalEditor,
+    ResultDevopsPane
   },
 }
 </script>
