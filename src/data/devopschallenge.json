@@ -1,62 +1,50 @@
 [
     {
         "id": 1,
-        "name": "peaks",
-        "path": "favicon.svg",
+        "name": "Challenge 1",
+        "path": "kubernetes.svg",
         "url": "http://localhost:8081/exo1",
+        "exercice": "exo1",
         "hints": [
             {
                 "index": "1",
-                "title": "logo1",
-                "text": "logo1"
-            },
-            {
-                "index": "2",
-                "title": "test2",
-                "text": "test2 efzopjzezfe\nfozeijzoe\n<span>test</span>"
+                "title": "Challenge 1",
+                "text": ""
             }
         ],
         "timer": "20",
-        "rating": 4
+        "rating": 1
     },
     {
         "id": 2,
-        "name": "mixitlogo",
-        "path": "mixitlogo.svg",
+        "name": "Challenge 2",
+        "path": "kubernetes.svg",
         "url": "http://localhost:8081/exo2",
+        "exercice": "exo2",
         "hints": [
             {
                 "index": "1",
-                "title": "test1",
-                "text": "test1"
-            },
-            {
-                "index": "2",
-                "title": "test2",
-                "text": "test2"
-            }
-        ],
-        "timer": "20",
-        "rating": 3
-    },
-    {
-        "id": 3,
-        "name": "kubecon",
-        "path": "kubecon.svg",
-        "url": "http://localhost:8081/exo3",
-        "hints": [
-            {
-                "index": "1",
-                "title": "test1",
-                "text": "test1 kubecon"
-            },
-            {
-                "index": "2",
-                "title": "test2",
-                "text": "test2 kubecon"
+                "title": "Challenge 2",
+                "text": ""
             }
         ],
         "timer": "20",
         "rating": 2
+    },
+    {
+        "id": 3,
+        "name": "Challenge 3",
+        "path": "kubernetes.svg",
+        "url": "http://localhost:8081/exo3",
+        "exercice": "exo3",
+        "hints": [
+            {
+                "index": "1",
+                "title": "Challenge 3",
+                "text": ""
+            }
+        ],
+        "timer": "20",
+        "rating": 4
     }
 ]

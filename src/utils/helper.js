@@ -27,9 +27,12 @@ export function countPixels(data, width, height) {
 
 export function calculateScore(resultDiff, maxDiff) {
   var percentage = 0;
-  if (resultDiff < maxDiff)
+  if (resultDiff < maxDiff) {
     percentage = (1 - (resultDiff / maxDiff)) * 100;
-
+    if (percentage >= 99) {
+      percentage = 100;
+    }
+  }
   return Math.floor(percentage/5) * 5;
 }
 

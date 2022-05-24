@@ -6,7 +6,7 @@
       :push-other-panes="false"
       :dbl-click-splitter="false">
       <pane size="45">
-        <TerminalEditor />
+        <TerminalEditor :exercice="exercice"/>
       </pane>
       <pane size="5">
         <ResultDevopsPane :idChallenge="id"/>
@@ -18,19 +18,15 @@
       </pane>
     </splitpanes>
   </div>
-  <header-pane v-model:darkmode="darkmode" @reset="reset"/>
 </template>
 
 <script>
 import { Splitpanes, Pane } from 'splitpanes'
 import 'splitpanes/dist/splitpanes.css'
-import HeaderPane from '../components/HeaderPane.vue'
 import TabsPane from '../components/TabsPane.vue'
 import TerminalEditor from '../components/TerminalEditor.vue'
 import DevopsChallengeData from '../data/devopschallenge.json'
 import ResultDevopsPane from '../components/ResultDevopsPane.vue'
-
-//const emptyPayload = { css: "", javascript: "", html: "" }
 
 export default {
   name: 'DevopsChallenge',
@@ -42,22 +38,16 @@ export default {
     return {
       darkmode: 'false',
       payload: { css: "", javascript: "", html: "" },
-      hints: challenge.hints
+      hints: challenge.hints,
+      exercice: challenge.exercice
     }
   },
   props: {
     id: {}
   },
-  methods: {
-    reset() {
-      this.payload.css = "";
-      this.payload.html = "";
-    }
-  },
   components: {
     Splitpanes,
     Pane,
-    HeaderPane,
     TabsPane,
     TerminalEditor,
     ResultDevopsPane

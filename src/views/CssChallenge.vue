@@ -14,7 +14,7 @@
             <code-editor title="CSS" mode="css" :darkmode="darkmode" v-model:code="payload.css" />
           </pane>
           <pane>
-            <result-pane :title="'Résultat'" v-model:payload="payload" :idChallenge="id" :darkmode="darkmode"/>
+            <result-pane :title="'Résultat'" v-model:payload="payload" :idChallenge="id" :darkmode="darkmode" @reset="reset"/>
           </pane>
         </splitpanes>
       </pane>
@@ -25,7 +25,6 @@
       </pane>
     </splitpanes>
   </div>
-  <header-pane v-model:darkmode="darkmode" @reset="reset"/>
 </template>
 
 <script>
@@ -33,11 +32,8 @@ import { Splitpanes, Pane } from 'splitpanes'
 import 'splitpanes/dist/splitpanes.css'
 import CodeEditor from '../components/CodeEditor.vue'
 import ResultPane from '../components/ResultPane.vue'
-import HeaderPane from '../components/HeaderPane.vue'
 import TabsPane from '../components/TabsPane.vue'
 import CssChallengeData from "../data/csschallenge.json";
-
-//const emptyPayload = { css: "", javascript: "", html: "" }
 
 export default {
   name: 'CssChallenge',
@@ -66,7 +62,6 @@ export default {
     Pane,
     CodeEditor,
     ResultPane,
-    HeaderPane,
     TabsPane,
   },
 }

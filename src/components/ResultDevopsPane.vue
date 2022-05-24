@@ -37,7 +37,8 @@ export default {
           }
         })
         .catch(() => {
-            this.data.data.response = "Une erreur est présente";
+          this.isValid = false;
+          this.data.data.response = "Une erreur est présente";
         })
     }
   },

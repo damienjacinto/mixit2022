@@ -5,12 +5,18 @@
         <div class="before"></div>
         <div class="after"></div>
       </div>
-      Votre score: {{ score }}
-      <br/>
-      Ecart détecté:
+      <p class="score">
+        Votre score: {{ score }} /100
+      </p>
       <div class="resultMain">
         <div class="canvasResultMain">
+          <canvas ref="canvasresult" class="canvasResult" width="400" height="400" />
+        </div>
+        <div class="canvasResultMain">
           <canvas ref="canvas" class="canvasResult" width="400" height="400" />
+        </div>
+        <div class="canvasResultMain">
+          <img id="resultImg" v-bind:src="imgResult" class="resultImg borderResultImg">
         </div>
       </div>
       <div class="modalButton">
@@ -31,6 +37,12 @@ export default {
         data: []
       })
     },
+    challengeData: {
+      type: Object,
+      default: () => ({
+        data: []
+      })
+    },
     score: {
       type: Number,
       default: 0
@@ -38,8 +50,11 @@ export default {
     shown: {
       type: Boolean,
       default: false
+    },
+    imgResult: {
+      type: String,
+      default: ""
     }
-
   },
   emits: ["retry", "close"],
   mounted () {
@@ -47,19 +62,33 @@ export default {
       var ctx = this.$refs.canvas.getContext('2d');
       ctx.putImageData(this.diffData, 0, 0, 0, 0, 400, 400);
     }
+    if (this.challengeData.data) {
+      var ctxResult = this.$refs.canvasresult.getContext('2d');
+      ctxResult.putImageData(this.challengeData, 0, 0,  0, 0, 400, 400);
+    }
   },
   updated() {
     if (this.diffData.data) {
       var ctx = this.$refs.canvas.getContext('2d');
       ctx.putImageData(this.diffData, 0, 0,  0, 0, 400, 400);
     }
+    if (this.challengeData.data) {
+      var ctxResult = this.$refs.canvasresult.getContext('2d');
+      ctxResult.putImageData(this.challengeData, 0, 0,  0, 0, 400, 400);
+    }
   }
 }
 </script>
 
 <style>
+  .score {
+    margin: 10px;
+    text-align: center;
+    font-size: bold;
+    color: #E74E96;
+  }
+
   .canvasResultMain {
-    width: 100%;
     justify-content: center;
   }
 
@@ -67,10 +96,17 @@ export default {
     width: 400px;
     height: 400px;
     display: block;
-    margin: 0 auto;
+    border: 1px solid #E74E96;
+    margin: 5px;
+  }
+
+  .borderResultImg {
+    border: 1px solid #E74E96;
+    margin: 5px;
   }
 
   .resultMain {
+    display: flex;
     width:100%;
     border-bottom: 2px solid #E74E96;
     border-top: 2px solid #E74E96;
@@ -93,8 +129,6 @@ export default {
   .modal {
     background: #FFFFFF;
     border-radius: 10px;
-    max-width: 600px;
-    min-width: 50%;
     min-height: 50%;
     box-shadow: 2px 2px 20px 1px;
     overflow-x: auto;

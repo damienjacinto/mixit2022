@@ -2,28 +2,40 @@
   <div class="mainChallenge">
     <img src="challenge.png" class="logoChallenge" />
     <div class="selectChallenge">
-      <div class="boxChallenge">
-        <router-link to="/cssSelect">
-          <h3>CSS</h3>
-        </router-link>
-      </div>
-      <div class="boxChallenge">
-        <h3>CODE</h3>
-      </div>
-      <div class="boxChallenge">
-        <router-link to="/devopsSelect">
-          <h3>DEVOPS</h3>
-        </router-link>
-      </div>
+      <TypeChallenge :title="'CSS'" :text="box.css.text" :path="'/cssSelect'" :image="box.css" />
+      <TypeChallenge :title="'ALGO'" :text="box.algo.text" :path="'/'" :image="box.algo" :disable="true" />
+      <TypeChallenge :title="'KUBE'" :text="box.kube.text" :path="'/devopsSelect'" :image="box.kube" />
     </div>
   </div>
 </template>
 
 <script>
+import TypeChallenge from '../components/TypeChallenge.vue'
 export default {
   name: 'HomePage',
+  data() {
+    return {
+      box: {
+        css: {
+          img: "",
+          logo: "/css.png",
+          text: "Reproduit la forme pour remporter le challenge"
+        },
+        algo: {
+          img: "/gorille.png",
+          logo: "/algo.png",
+          text: "Corrige l'aglorithme pour remporter le challenge"
+        },
+        kube: {
+          img: "/devops.png",
+          logo: "/kube.png",
+          text: "Répare un déploiement sur kubernetes"
+        }
+      }
+    }
+  },
   components: {
-
+    TypeChallenge
   }
 }
 </script>
@@ -33,7 +45,7 @@ export default {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 40%;
+  width: 30%;
 }
 
 .mainChallenge {
@@ -43,9 +55,10 @@ export default {
 .selectChallenge {
   display: flex;
   width: 100%;
-  height:100%;
+  //height:100%;
   justify-content: center;
-  margin-top:50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .green {
@@ -60,13 +73,4 @@ export default {
   background-color: ;
 }
 
-
-
-.boxChallenge {
-  width: 20%;
-  height: 60%;
-  margin: 20px;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-}
 </style>

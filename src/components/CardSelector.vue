@@ -55,8 +55,8 @@ export default {
   font-size: 1.5em;
 }
 .imagePreview {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 }
 .backgroundImagePreview {
   background: white;

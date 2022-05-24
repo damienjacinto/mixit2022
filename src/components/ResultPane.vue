@@ -20,15 +20,41 @@
         <img id="resultImg" slot="second" v-bind:src="'/' + challengeImg.path" class="resultImg">
         <!-- eslint-enable -->
       </ImgComparisonSlider>
+      <div class="buttonCenter">
+        <button class="button" @click="tojpg">Valider</button>
+      </div>
     </div>
   </div>
+  <ModalPane
+      v-show="isModalVisible"
+      @retry="closeModal"
+      @close="exitChallenge"
+      v-model:diffData="diffData"
+      v-model:challengeData="challengeData"
+      v-model:score="score"
+      v-model:shown="isModalVisible"
+      :imgResult="'/' + challengeImg.path"
+    />
 </template>
 
 <script>
 import { ImgComparisonSlider } from '@img-comparison-slider/vue';
 import CssChallengeData from "../data/csschallenge.json";
+import * as htmlToImage from 'html-to-image';
+import ModalPane from './ModalPane.vue';
+const pixelmatch = require('pixelmatch');
+import { getDataFromImage, getDataFromCanvas, countPixels, calculateScore } from '../utils/helper.js';
+
 export default {
   name: "result-pane",
+  data: function() {
+    return {
+      isModalVisible: false,
+      diffData: {},
+      challengeData: {},
+      score: 0
+    }
+  },
   props: {
     payload: {
       type: Object,
@@ -55,6 +81,36 @@ export default {
   },
   components: {
     ImgComparisonSlider,
+    ModalPane
+  },
+  methods: {
+    tojpg() {
+      htmlToImage.toCanvas(document.getElementById('resultPane').contentWindow.document.documentElement, { quality: 0.95, canvasWidth: 400, canvasHeight: 400, width: 400, height: 400})
+        .then((canvas) => {
+          var challengeData = getDataFromCanvas(canvas);
+          var resultData = getDataFromImage(document.getElementById('resultImg'));
+          var diffData = document.createElement('canvas').getContext('2d').createImageData(400, 400);
+
+          var numDiffPixels = pixelmatch(challengeData.data, resultData.data, diffData.data, 400, 400, {threshold: 0.1});
+
+          var maxDiff = countPixels(resultData.data, 400, 400);
+          this.score = calculateScore(numDiffPixels, maxDiff);
+          this.diffData = diffData;
+          this.challengeData = challengeData;
+
+          this.showModal();
+        });
+    },
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
+    exitChallenge() {
+      this.$emit('reset');
+      this.$router.push({name:'Home'});
+    }
   },
   computed: {
     codeComputed: function() {
@@ -75,8 +131,9 @@ export default {
       return CssChallengeData.filter(function(item) {
         return item.id === parseInt(idChallenge)
       })[0];
-    }
-  }
+    },
+  },
+  emits: ["reset"],
 };
 </script>
 

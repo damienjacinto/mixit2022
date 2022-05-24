@@ -24,6 +24,12 @@ export default {
       history: []
     };
   },
+  props: {
+    exercice: {
+      type: String,
+      default: ""
+    }
+  },
   mounted() {
     let url ="ws://localhost:9999";
     this.init(url);
@@ -119,6 +125,7 @@ export default {
       this.socket.onsend = this.send;
     },
     open: function() {
+      this.socket.onsend(JSON.stringify({start: this.exercice}));
       this.initXterm();
     },
     error: function() {

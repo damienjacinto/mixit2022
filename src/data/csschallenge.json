@@ -2,36 +2,53 @@
     {
         "id": 1,
         "name": "peaks",
-        "path": "favicon.svg",
+        "path": "peaks.png",
         "hints": [
             {
                 "index": "1",
-                "title": "logo1",
-                "text": "logo1"
+                "title": "Peaks",
+                "text": "Dimension du cadre 400px x 400px",
+                "color": ["#E74E96"]
             },
             {
                 "index": "2",
-                "title": "test2",
-                "text": "test2 efzopjzezfe\nfozeijzoe\n<span>test</span>"
+                "title": "Aide 1",
+                "text": "Le logo de peaks est formé de 3 triangles superposés (2 roses, 1 blanc entre les deux triangles roses)"
+            },
+            {
+                "index": "3",
+                "title": "Aide 2",
+                "text": "Un moyen de former un triangle est de spécifier 2 bordures latérales transparentes en plus de la bordure basse de la couleur souhaitée."
+            },
+            {
+                "index": "4",
+                "title": "Aide 3",
+                "text": "Un exemple de triangle\nborder-right: 50px solid transparent;\nborder-bottom : 300px solid #fff;\nborder-left : 50px solid transparent;"
             }
         ],
         "timer": "20",
-        "rating": 4
+        "rating": 5
     },
     {
         "id": 2,
-        "name": "mixitlogo",
-        "path": "mixitlogo.svg",
+        "name": "Cloud",
+        "path": "cloud.svg",
         "hints": [
             {
                 "index": "1",
-                "title": "test1",
-                "text": "test1"
+                "title": "The Cloud",
+                "text": "Diamètre des cercles : 100px, la cadre est de 400px x 400px",
+                "color": ["#1092FF"]
             },
             {
                 "index": "2",
-                "title": "test2",
-                "text": "test2"
+                "title": "Aide 1",
+                "text": "Un cerle est un carré avec la propriété 'border-radius' égale à son rayon.\nPour placer exactement un objet utiliser 'position: absolute' et les propriétés top, left, transform."
+            },
+            {
+                "index": "3",
+                "title": "Aide 2",
+                "text": "Pour masquer une partie d'un objet\nExemple : background: linear-gradient(#1092FF, #1092FF) no-repeat right center / 75% 100%"
             }
         ],
         "timer": "20",
@@ -39,21 +56,52 @@
     },
     {
         "id": 3,
-        "name": "kubecon",
-        "path": "kubecon.svg",
+        "name": "Magnum",
+        "path": "magnum.png",
         "hints": [
             {
                 "index": "1",
-                "title": "test1",
-                "text": "test1 kubecon"
+                "title": "Magnum",
+                "text": "Dimension de la glace : 100px x 150px, dimension du batonnet : 30px x 50px",
+                "color": ["#A85D47", "#E2931E"]
             },
             {
                 "index": "2",
-                "title": "test2",
-                "text": "test2 kubecon"
+                "title": "Aide 1",
+                "text": "La propriété border-radius a 4 valeurs possibles pour gérer chaque angle d'un rectangle"
+            },
+            {
+                "index": "3",
+                "title": "Aide 2",
+                "text": "Pour placer exactement un objet utiliser 'position: absolute' et les propriétés top, left, transform."
             }
         ],
         "timer": "20",
         "rating": 2
+    },
+    {
+        "id": 4,
+        "name": "Pacman",
+        "path": "pacman.png",
+        "hints": [
+            {
+                "index": "1",
+                "title": "Pacman",
+                "text": "Rayon du Pacman : 75px, rayon des points : 10px",
+                "color": ["#F7C600"]
+            },
+            {
+                "index": "2",
+                "title": "Aide 1",
+                "text": "La bordure d'un element de 0px en hauteur et largeur forme aussi un cercle\nLa propriété bordure a plusieurs segment (bottom, top, ...)"
+            },
+            {
+                "index": "3",
+                "title": "Aide 2",
+                "text": "Pour placer exactement un objet utiliser 'position: absolute' et les propriétés top, left, transform: translate, transform: translateX."
+            }
+        ],
+        "timer": "20",
+        "rating": 3
     }
 ]
